@@ -1,0 +1,117 @@
+@import '../_utils/_imports';
+
+.loginBox {
+  box-shadow: 0 pxToRem(1.6) pxToRem(4) 0 $color-gray-dark;
+  border-radius: pxToRem(2);
+  @include flexbox-container(flex, column, null, center, center, center);
+  margin: 0 auto pxToRem(20);
+  padding: pxToRem(40) pxToRem(60);
+  max-width: pxToRem(568);
+}
+
+.formBox {
+  display: inline-block;
+  margin-bottom: pxToRem(12);
+  width: 100%;
+
+  &--password {
+    @extend .formBox;
+    position: relative;
+  }
+}
+
+.boxChangePassword {
+  background-color: transparent;
+  border: none;
+  bottom: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: pxToRem(32);
+  margin-top: pxToRem(36);
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: pxToRem(8);
+  top: 0;
+  width: pxToRem(32);
+
+  &_img {}
+}
+
+.label {
+  color: $color-blue;
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: pxToRem(12);
+  width: 100%;
+}
+
+.formInput {
+  border-radius: pxToRem(4);
+  border: pxToRem(1.4) solid $color-blue;
+  padding: pxToRem(12);
+  outline: none;
+  width: 100%;
+
+  &:-moz-placeholder {
+    color: $color-gray-dark;
+    font-weight: 300;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color-gray-dark;
+    font-weight: 300;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-gray-dark;
+    font-weight: 300;
+  }
+
+  &--error {
+    border-color: $color-red;
+    background-color: $color-bg-pink;
+  }
+}
+
+.loginBox {
+  min-height: pxToRem(360);
+
+  .formBox {
+    max-width: pxToRem(320);
+    margin-bottom: pxToRem(20);
+
+    &--password {
+      .formInput {
+        padding-right: pxToRem(40);
+      }
+    }
+  }
+
+  .formInput {
+    text-align: center;
+  }
+}
+
+.btn {
+  background-color: $color-blue;
+  color: $color-white;
+  border: none;
+  font-weight: 500;
+  font-size: pxToRem(14);
+  padding: pxToRem(16) pxToRem(12);
+
+  &--login {
+    @extend .btn;
+    border-radius: pxToRem(24);
+    display: block;
+    margin: 0 auto;
+    min-width: pxToRem(200);
+    outline: none;
+
+    &:disabled {
+      background-color: $color-gray;
+      cursor: not-allowed;
+    }
+  }
+}
